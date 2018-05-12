@@ -1,0 +1,110 @@
+﻿@model MvcBT.Models.SACH
+
+@{
+    ViewBag.Title = "Chitietsach";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Thông tin chi tiết sách</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Tên sách:
+            @*@Html.DisplayNameFor(model => model.Tensach)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tensach)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Donvitinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donvitinh)
+        </dd>*@
+
+        <dt>Giá bán:
+            @*@Html.DisplayNameFor(model => model.Dongia)*@
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Dongia)*@
+            @String.Format("{0:0,0}",Model.Dongia) VND
+        </dd>
+
+        <dt>Mô tả:
+            @*@Html.DisplayNameFor(model => model.Mota)*@
+        </dt>
+
+        <dd style="width:600px;text-align:justify">
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>Hình minh họa:
+            @*@Html.DisplayNameFor(model => model.Hinhminhhoa)*@
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Hinhminhhoa)*@
+            <img src="@Url.Content("~/Hinhsanpham/"+Model.Hinhminhhoa)" width="120px"/>
+        </dd>
+
+        <dt>Chủ đề:
+            @*@Html.DisplayNameFor(model => model.MaCD)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDE.TenChuDe)
+        </dd>
+
+        <dt>Nhà xuất bản:
+            @*@Html.DisplayNameFor(model => model.MaNXB)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHAXUATBAN.TenNXB)
+        </dd>
+
+        <dt>Ngày cập nhật:
+            @*@Html.DisplayNameFor(model => model.Ngaycapnhat)*@
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Ngaycapnhat)*@
+            @String.Format("{0:dd/MM/yyyy}",Model.Ngaycapnhat)
+        </dd>
+
+        <dt>Số lượng tồn:
+            @*@Html.DisplayNameFor(model => model.Soluongban)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluongban)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.solanxem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.solanxem)
+        </dd>*@
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.moi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.moi)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Điều chỉnh", "Suasach", new { id = Model.Masach }) |
+    @Html.ActionLink("Trở về", "Sach")
+</p>

@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Log in</title>
+    <meta charset="utf-8">
+    <link href="~/Content/login/stylelogin.css" rel="stylesheet" />
+    <script src="~/Scripts/login/login.js"></script>
+</head>
+<body>
+    <h1 style="color:black;text-align: center">ĐĂNG NHẬP HỆ THỐNG</h1>
+    <p style="text-align: center">Vui lòng nhập Username và Password</p>
+    <h2 style="color: red;text-align: center">@ViewBag.Thongbao</h2>
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form">
+                <input type="text" placeholder="name" />
+                <input type="password" placeholder="password" />
+                <input type="text" placeholder="email address" />
+                <button>create</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+            </form>
+            @*<form class="login-form">*@
+                @using (Html.BeginForm())
+                {
+                    <form class="login-form">
+                        @Html.ValidationSummary(true)
+                        <input type="text" name="username" placeholder="username" />
+                        @ViewData["Loi1"]
+                        <input type="password" name="password" placeholder="password" />
+                        @ViewData["Loi2"]
+                        <button>login</button>
+                        <p class="message">Not registered? <a href="#">Create an account</a></p>
+                    </form>
+                }
+                    @*</form>*@
+        </div>
+    </div>
+</body>
+</html>

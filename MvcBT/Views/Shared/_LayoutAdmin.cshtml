@@ -1,0 +1,58 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Responsiva</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1">
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+</head>
+<body>
+    <div class="resize"></div>
+    <!-- Div Wrapper Element Starts Here -->
+    <div id="Wrapper">
+        <!-- Header Element Starts Here -->
+        <header id="header">
+            <!-- Hgroup Element Starts Here -->
+            <hgroup id="title">
+                <div id="logo"></div>
+                <h2>A <small>Responsive</small> web template!</h2>
+            </hgroup>
+            <!-- Hgroup Element Ends Here -->
+            <!-- Nav Element Starts Here -->
+            <nav class="navigation"> 
+            @Html.ActionLink("TRANG CHỦ","Index","Admin") @Html.ActionLink("Quản lí chủ đề", "Sanpham", "Admin") @Html.ActionLink("Quản lí nhà xuất bản", "Nhaxuatban", "Admin") @Html.ActionLink("Quản lí sách", "Sach", "Admin")
+           
+
+            </nav>
+        </header>
+        <!-- Header Element Ends Here -->
+        <!-- Div wrapper2 starts here -->
+      
+        <div>
+            @RenderBody()
+        </div>
+        <!-- Div wrapper2 ends here -->
+        <!-- Footer Element Starts Here -->
+        <footer id="copyrights">
+            <p><small>&copy; 2012 <a href="#">Domain Name</a></small></p>
+            <p><a href="#">About Us</a> - <a href="#">Advertise</a> - <a href="#">Contact Us</a></p>
+            <address>
+                Website Template by <a target="_blank" href="http://www.dzyngiri.com/">Dzyngiri</a>
+            </address>
+        </footer>
+        <!-- Footer Element Ends Here -->
+    </div>
+    <!-- Div Wrapper Element ends Here -->
+</body>
+</body>
+</html>

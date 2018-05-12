@@ -1,0 +1,59 @@
+﻿@using MvcBT.Models
+@using PagedList.Mvc;
+@model PagedList.IPagedList<MvcBT.Models.SACH>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2 style="text-align: center; color: red">SÁCH MỚI</h2>
+@*@foreach(var sach in Model)
+{
+    <li>
+        <a href="@Url.Action("Details","BookStore",new { id = sach.Masach })" >
+            <img alt="@sach.Tensach" src="~/Hinhsanpham/@sach.Hinhminhhoa" />
+            <span>@sach.Tensach</span>
+        </a>
+    </li>
+}*@
+<div class="row">
+    @foreach(var sach in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <a href="@Url.Action("Details","BookStore",new { id = sach.Masach })" >
+                    <img alt="@sach.Tensach" src="~/Hinhsanpham/@sach.Hinhminhhoa" width="200" />
+                    <div>
+                        <br/>
+                        <h4 style="text-align:center">
+                            @sach.Tensach
+                        </h4>
+                        <p></p>
+                    </div>
+                    <div class="rattings">
+                        <p class="pull-right">15 reviews</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </p>
+                    </div>
+            </div>
+        </div>
+     
+    }
+</div>
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+    @Html.PagedListPager(Model,page=>Url.Action("Index",new { page=page}))
+</div>
+<style>
+    .MenuTrang li{
+        display: inline;
+    }
+</style>    
+
+
